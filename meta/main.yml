@@ -1,0 +1,34 @@
+galaxy_info:
+  role_name: cs9_stig
+  namespace: stigready
+  description: Ansible role for CentOS Stream 9 DISA STIG hardening (stig). ComplianceAsCode/SSG
+    remediation, OpenSCAP-verified in StigForge CI. Install with ansible-galaxy or
+    git.
+  license: BSD-3-Clause
+  min_ansible_version: '2.16'
+  platforms:
+  - name: CentOS
+    versions:
+    - Stream 9
+  author: stigready
+  company: StigReady
+  galaxy_tags:
+  - ansible
+  - ansible-role
+  - centos
+  - centos-stream
+  - compliance
+  - cs9
+  - devsecops
+  - disa
+  - disa-stig
+  - hardening
+  - infrastructure
+  - openscap
+  - rhel
+  - security
+  - stig
+  - stigforge
+  github_branch: main
+  issue_tracker_url: https://github.com/stigready/cs9-stig/issues
+dependencies: []

@@ -1,0 +1,8 @@
+StigForge role packaging (Makefile, compliance layout, export metadata): see LICENSE (MIT).
+
+Ansible remediation task bodies in `tasks/` are imported from ComplianceAsCode /
+scap-security-guide (BSD-3-Clause). Source attribution is preserved in generated
+task file headers.
+
+OpenSCAP evidence under `compliance/` is release metadata only; Ansible does not
+load it as part of this role.
