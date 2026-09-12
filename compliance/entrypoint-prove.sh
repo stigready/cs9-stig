@@ -72,7 +72,6 @@ oscap xccdf eval \
   --profile "$XCCDF" \
   --results "$OUT_DIR/results.xml" \
   --results-arf "$OUT_DIR/arf.xml" \
-  --report "$OUT_DIR/report.html" \
   "$DATASTREAM_PATH"
 oscap_rc=$?
 set -e

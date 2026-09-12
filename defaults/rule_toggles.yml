@@ -41,12 +41,10 @@ cs9stig_accounts_umask_etc_csh_cshrc: true
 cs9stig_accounts_umask_etc_login_defs: true
 cs9stig_accounts_umask_etc_profile: true
 cs9stig_accounts_umask_interactive_users: true
-cs9stig_accounts_user_dot_no_world_writable_programs: true
 cs9stig_accounts_user_interactive_home_directory_defined: true
 cs9stig_accounts_user_interactive_home_directory_exists: true
 cs9stig_aide_build_database: true
 cs9stig_aide_check_audit_tools: true
-cs9stig_aide_periodic_cron_checking: true
 cs9stig_aide_scan_notification: true
 cs9stig_aide_use_fips_hashes: true
 cs9stig_aide_verify_acls: true
@@ -56,6 +54,7 @@ cs9stig_audit_privileged_commands_init: true
 cs9stig_audit_privileged_commands_poweroff: true
 cs9stig_audit_privileged_commands_reboot: true
 cs9stig_audit_privileged_commands_shutdown: true
+cs9stig_audit_rules_cron_execution: true
 cs9stig_audit_rules_dac_modification_chmod: true
 cs9stig_audit_rules_dac_modification_chown: true
 cs9stig_audit_rules_dac_modification_fchmod: true
@@ -71,7 +70,6 @@ cs9stig_audit_rules_dac_modification_removexattr: true
 cs9stig_audit_rules_dac_modification_setxattr: true
 cs9stig_audit_rules_dac_modification_umount: true
 cs9stig_audit_rules_dac_modification_umount2: true
-cs9stig_audit_rules_etc_cron_d: true
 cs9stig_audit_rules_execution_chacl: true
 cs9stig_audit_rules_execution_chcon: true
 cs9stig_audit_rules_execution_semanage: true
@@ -89,7 +87,6 @@ cs9stig_audit_rules_kernel_module_loading_finit: true
 cs9stig_audit_rules_kernel_module_loading_init: true
 cs9stig_audit_rules_login_events_faillock: true
 cs9stig_audit_rules_login_events_lastlog: true
-cs9stig_audit_rules_login_events_tallylog: true
 cs9stig_audit_rules_privileged_commands_chage: true
 cs9stig_audit_rules_privileged_commands_chsh: true
 cs9stig_audit_rules_privileged_commands_crontab: true
@@ -126,7 +123,6 @@ cs9stig_audit_rules_usergroup_modification_gshadow: true
 cs9stig_audit_rules_usergroup_modification_opasswd: true
 cs9stig_audit_rules_usergroup_modification_passwd: true
 cs9stig_audit_rules_usergroup_modification_shadow: true
-cs9stig_audit_rules_var_spool_cron: true
 cs9stig_auditd_data_disk_error_action_stig: true
 cs9stig_auditd_data_disk_full_action_stig: true
 cs9stig_auditd_data_retention_action_mail_acct: true
@@ -143,17 +139,18 @@ cs9stig_auditd_overflow_action: true
 cs9stig_auditd_write_logs: true
 cs9stig_banner_etc_issue: true
 cs9stig_chronyd_client_only: true
+cs9stig_chronyd_configure_local_socket: true
 cs9stig_chronyd_no_chronyc_network: true
 cs9stig_chronyd_or_ntpd_set_maxpoll: true
 cs9stig_chronyd_specify_remote_server: true
 cs9stig_clean_components_post_updating: true
 cs9stig_configure_bind_crypto_policy: true
 cs9stig_configure_crypto_policy: true
-cs9stig_configure_kerberos_crypto_policy: true
 cs9stig_configure_libreswan_crypto_policy: true
 cs9stig_configure_usbguard_auditbackend: true
 cs9stig_coredump_disable_backtraces: true
 cs9stig_coredump_disable_storage: true
+cs9stig_crypto_policy_not_overridden: true
 cs9stig_dconf_db_up_to_date: true
 cs9stig_dconf_gnome_banner_enabled: true
 cs9stig_dconf_gnome_disable_automount_open: true
@@ -170,7 +167,6 @@ cs9stig_dconf_gnome_screensaver_user_locks: true
 cs9stig_dir_group_ownership_library_dirs: true
 cs9stig_dir_ownership_library_dirs: true
 cs9stig_dir_permissions_library_dirs: true
-cs9stig_dir_perms_world_writable_root_owned: true
 cs9stig_dir_perms_world_writable_sticky_bits: true
 cs9stig_directory_group_ownership_var_log_audit: true
 cs9stig_directory_groupowner_sshd_config_d: true
@@ -182,8 +178,8 @@ cs9stig_disable_ctrlaltdel_reboot: true
 cs9stig_disable_host_auth: true
 cs9stig_disable_users_coredumps: true
 cs9stig_disallow_bypass_password_sudo: true
-cs9stig_display_login_attempts: true
 cs9stig_enable_authselect: true
+cs9stig_ensure_epel_repos_disabled: true
 cs9stig_ensure_gpgcheck_globally_activated: true
 cs9stig_ensure_gpgcheck_local_packages: true
 cs9stig_ensure_gpgcheck_never_disabled: true
@@ -239,18 +235,13 @@ cs9stig_file_ownership_audit_configuration: true
 cs9stig_file_ownership_binary_dirs: true
 cs9stig_file_ownership_library_dirs: true
 cs9stig_file_permission_user_init_files_root: true
-cs9stig_file_permissions_audit_configuration: true
+cs9stig_file_permissions_audit_configuration_stig: true
 cs9stig_file_permissions_backup_etc_group: true
 cs9stig_file_permissions_backup_etc_gshadow: true
 cs9stig_file_permissions_backup_etc_passwd: true
 cs9stig_file_permissions_backup_etc_shadow: true
 cs9stig_file_permissions_binary_dirs: true
-cs9stig_file_permissions_cron_d: true
-cs9stig_file_permissions_cron_daily: true
-cs9stig_file_permissions_cron_hourly: true
-cs9stig_file_permissions_cron_monthly: true
-cs9stig_file_permissions_cron_weekly: true
-cs9stig_file_permissions_etc_audit_auditd: true
+cs9stig_file_permissions_cron_not_modified: true
 cs9stig_file_permissions_etc_group: true
 cs9stig_file_permissions_etc_gshadow: true
 cs9stig_file_permissions_etc_passwd: true
@@ -318,7 +309,6 @@ cs9stig_no_user_host_based_files: true
 cs9stig_package_aide_installed: true
 cs9stig_package_audit_installed: true
 cs9stig_package_chrony_installed: true
-cs9stig_package_cron_installed: true
 cs9stig_package_fapolicyd_installed: true
 cs9stig_package_gssproxy_removed: true
 cs9stig_package_iprutils_removed: true
@@ -355,7 +345,6 @@ cs9stig_set_password_hashing_algorithm_libuserconf: true
 cs9stig_set_password_hashing_algorithm_logindefs: true
 cs9stig_set_password_hashing_algorithm_passwordauth: true
 cs9stig_special_service_block: true
-cs9stig_sshd_disable_compression: true
 cs9stig_sshd_disable_empty_passwords: true
 cs9stig_sshd_disable_gssapi_auth: true
 cs9stig_sshd_disable_kerb_auth: true
@@ -410,6 +399,5 @@ cs9stig_sysctl_net_ipv6_conf_all_forwarding: true
 cs9stig_sysctl_net_ipv6_conf_default_accept_ra: true
 cs9stig_sysctl_net_ipv6_conf_default_accept_redirects: true
 cs9stig_sysctl_net_ipv6_conf_default_accept_source_route: true
-cs9stig_use_pam_wheel_for_su: true
 cs9stig_wireless_disable_interfaces: true
 cs9stig_xwindows_runlevel_target: true

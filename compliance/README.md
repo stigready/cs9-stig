@@ -1,7 +1,7 @@
 # Verify OpenSCAP scores in this role repo
 
 Each release ships **immutable evidence** under `compliance/releases/<version>/<profile>/`
-(`score.json`, `results.xml`, `report.html`, `evidence.json`).
+(`score.json`, `results.xml`, `arf.xml`, `evidence.json`).
 
 You can **re-check the score** in two ways:
 
