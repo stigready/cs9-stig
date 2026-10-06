@@ -1,4 +1,4 @@
-# Source: ComplianceAsCode/content (scap-security-guide) — BSD-3-Clause
+# Source: ComplianceAsCode/content (scap-security-guide) - BSD-3-Clause
 # Imported by StigForge; cloud-breaker tasks stripped per policy/cloud-ami.yml
 stigforge_role: cs9_stig
 stigforge_profile: stig
