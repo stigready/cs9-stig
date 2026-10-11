@@ -49,7 +49,6 @@ cs9stig_aide_scan_notification: true
 cs9stig_aide_use_fips_hashes: true
 cs9stig_aide_verify_acls: true
 cs9stig_aide_verify_ext_attributes: true
-cs9stig_always: true
 cs9stig_audit_privileged_commands_init: true
 cs9stig_audit_privileged_commands_poweroff: true
 cs9stig_audit_privileged_commands_reboot: true
