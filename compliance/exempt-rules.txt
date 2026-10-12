@@ -30,4 +30,3 @@ sssd_enable_certmap
 sssd_enable_smartcards
 sudo_remove_nopasswd
 sudo_require_authentication
-sudo_require_reauthentication
