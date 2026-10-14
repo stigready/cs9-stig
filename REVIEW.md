@@ -1,7 +1,7 @@
-# Review package — `cs9_stig` v0.3.19
+# Review package — `cs9_stig` v0.3.20
 
 Product owner review (Phase B/C pilot). **Not** a StigApplied cutover signal.
 
 ## Evidence (immutable for this release)
 
-- CI pipeline: https://github.com/stigready/stigforge/actions/runs/38518720788
+- CI pipeline: https://github.com/stigready/stigforge/actions/runs/38551192298
