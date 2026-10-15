@@ -4711,6 +4711,156 @@
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_remove_no_authenticate | default(true) | bool)
 - block:
+  - name: Require Re-Authentication When Using the sudo Command - Find /etc/sudoers.d/* files containing 'Defaults timestamp_timeout'
+    ansible.builtin.find:
+      path: /etc/sudoers.d
+      patterns: '*'
+      contains: ^[\s]*Defaults\s.*\btimestamp_timeout[\s]*=.*
+    register: sudoers_d_defaults_timestamp_timeout
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"sudo" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-432015
+    - NIST-800-53-IA-11
+    - PCI-DSSv4-2.2
+    - PCI-DSSv4-2.2.6
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+    - sudo_require_reauthentication
+  rescue:
+  - name: 'StigForge: continue after error in "Require Re-Authentication When Using the sudo Command - Find /etc/sudoers.d/*
+      files containing ''Defaults timestamp_timeout''" (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: "Require Re-Authentication When Using the sudo Command - Find /etc/sudoers.d/* files containing ''Defaults
+        timestamp_timeout''" raised an error (module or templating) and was skipped; continuing so later rules still run.
+        OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_require_reauthentication | default(true) | bool)
+- block:
+  - name: Require Re-Authentication When Using the sudo Command - Remove 'Defaults timestamp_timeout' from /etc/sudoers.d/*
+      files
+    ansible.builtin.lineinfile:
+      path: '{{ item.path }}'
+      regexp: ^[\s]*Defaults\s.*\btimestamp_timeout[\s]*=.*
+      state: absent
+    with_items: '{{ sudoers_d_defaults_timestamp_timeout.files }}'
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"sudo" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-432015
+    - NIST-800-53-IA-11
+    - PCI-DSSv4-2.2
+    - PCI-DSSv4-2.2.6
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+    - sudo_require_reauthentication
+  rescue:
+  - name: 'StigForge: continue after error in "Require Re-Authentication When Using the sudo Command - Remove ''Defaults timestamp_timeout''
+      from /etc/sudoers.d/* files" (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: "Require Re-Authentication When Using the sudo Command - Remove ''Defaults timestamp_timeout'' from
+        /etc/sudoers.d/* files" raised an error (module or templating) and was skipped; continuing so later rules still run.
+        OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_require_reauthentication | default(true) | bool)
+- block:
+  - name: Require Re-Authentication When Using the sudo Command - Ensure timestamp_timeout has the appropriate value in /etc/sudoers
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers
+      regexp: ^[\s]*Defaults\s(.*)\btimestamp_timeout[\s]*=[\s]*[-]?\w+\b(.*)$
+      line: Defaults \1timestamp_timeout={{ var_sudo_timestamp_timeout }}\2
+      validate: /usr/sbin/visudo -cf %s
+      backrefs: true
+    register: edit_sudoers_timestamp_timeout_option
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"sudo" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-432015
+    - NIST-800-53-IA-11
+    - PCI-DSSv4-2.2
+    - PCI-DSSv4-2.2.6
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+    - sudo_require_reauthentication
+  rescue:
+  - name: 'StigForge: continue after error in ''Require Re-Authentication When Using the sudo Command - Ensure timestamp_timeout
+      has the appropriate value in /etc/sudoers'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Require Re-Authentication When Using the sudo Command - Ensure timestamp_timeout has the appropriate
+        value in /etc/sudoers'' raised an error (module or templating) and was skipped; continuing so later rules still run.
+        OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_require_reauthentication | default(true) | bool)
+- block:
+  - name: Require Re-Authentication When Using the sudo Command - Enable timestamp_timeout option with correct value in /etc/sudoers
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers
+      line: Defaults timestamp_timeout={{ var_sudo_timestamp_timeout }}
+      validate: /usr/sbin/visudo -cf %s
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"sudo" in ansible_facts.packages'
+    - 'edit_sudoers_timestamp_timeout_option is defined and not edit_sudoers_timestamp_timeout_option.changed
+
+      '
+    tags:
+    - DISA-STIG-RHEL-09-432015
+    - NIST-800-53-IA-11
+    - PCI-DSSv4-2.2
+    - PCI-DSSv4-2.2.6
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+    - sudo_require_reauthentication
+  rescue:
+  - name: 'StigForge: continue after error in ''Require Re-Authentication When Using the sudo Command - Enable timestamp_timeout
+      option with correct value in /etc/sudoers'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Require Re-Authentication When Using the sudo Command - Enable timestamp_timeout option with correct
+        value in /etc/sudoers'' raised an error (module or templating) and was skipped; continuing so later rules still run.
+        OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_require_reauthentication | default(true) | bool)
+- block:
+  - name: Require Re-Authentication When Using the sudo Command - Remove timestamp_timeout wrong values in /etc/sudoers
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers
+      regexp: ^[\s]*Defaults\s.*\btimestamp_timeout[\s]*=[\s]*(?!{{ var_sudo_timestamp_timeout }}\b)[-]?\w+\b.*$
+      state: absent
+      validate: /usr/sbin/visudo -cf %s
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"sudo" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-432015
+    - NIST-800-53-IA-11
+    - PCI-DSSv4-2.2
+    - PCI-DSSv4-2.2.6
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+    - sudo_require_reauthentication
+  rescue:
+  - name: 'StigForge: continue after error in ''Require Re-Authentication When Using the sudo Command - Remove timestamp_timeout
+      wrong values in /etc/sudoers'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Require Re-Authentication When Using the sudo Command - Remove timestamp_timeout wrong values in
+        /etc/sudoers'' raised an error (module or templating) and was skipped; continuing so later rules still run. OpenSCAP
+        evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_sudo_require_reauthentication | default(true) | bool)
+- block:
   - name: Find out if /etc/sudoers.d/* files contain Defaults targetpw to be deduplicated
     ansible.builtin.find:
       path: /etc/sudoers.d
@@ -33404,106 +33554,6 @@
         the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_file_permissions_cron_not_modified | default(true) |
     bool)
-- block:
-  - name: Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution of Authorized
-      Software Programs. - Ensure a Final Rule Denying Everything
-    ansible.builtin.copy:
-      content: '# Red Hat KCS 7003854 (https://access.redhat.com/solutions/7003854)
-
-        deny perm=any all : all
-
-        '
-      dest: /etc/fapolicyd/rules.d/99-deny-everything.rules
-      owner: root
-      group: fapolicyd
-      mode: '0644'
-    when:
-    - '"kernel-core" in ansible_facts.packages'
-    - '"fapolicyd" in ansible_facts.packages'
-    register: result_fapolicyd_final_rule
-    tags:
-    - DISA-STIG-RHEL-09-433016
-    - NIST-800-53-CM-6 b
-    - NIST-800-53-CM-7 (2)
-    - NIST-800-53-CM-7 (5) (b)
-    - fapolicy_default_deny
-    - low_complexity
-    - low_disruption
-    - medium_severity
-    - no_reboot_needed
-    - restrict_strategy
-  rescue:
-  - name: 'StigForge: continue after error in ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy
-      to Allow the Execution of Authorized Software Programs. - Ensure a Final Rule Denying Everything'' (OpenSCAP is the
-      score gate)'
-    ansible.builtin.debug:
-      msg: 'StigForge: ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution
-        of Authorized Software Programs. - Ensure a Final Rule Denying Everything'' raised an error (module or templating)
-        and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_fapolicy_default_deny | default(true) | bool)
-- block:
-  - name: Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution of Authorized
-      Software Programs. - Ensure fapolicyd is Not Permissive
-    ansible.builtin.lineinfile:
-      path: /etc/fapolicyd/fapolicyd.conf
-      regexp: ^(permissive\s*=).*$
-      line: \1 0
-      backrefs: true
-    when:
-    - '"kernel-core" in ansible_facts.packages'
-    - '"fapolicyd" in ansible_facts.packages'
-    register: result_fapolicyd_enforced
-    tags:
-    - DISA-STIG-RHEL-09-433016
-    - NIST-800-53-CM-6 b
-    - NIST-800-53-CM-7 (2)
-    - NIST-800-53-CM-7 (5) (b)
-    - fapolicy_default_deny
-    - low_complexity
-    - low_disruption
-    - medium_severity
-    - no_reboot_needed
-    - restrict_strategy
-  rescue:
-  - name: 'StigForge: continue after error in ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy
-      to Allow the Execution of Authorized Software Programs. - Ensure fapolicyd is Not Permissive'' (OpenSCAP is the score
-      gate)'
-    ansible.builtin.debug:
-      msg: 'StigForge: ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution
-        of Authorized Software Programs. - Ensure fapolicyd is Not Permissive'' raised an error (module or templating) and
-        was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_fapolicy_default_deny | default(true) | bool)
-- block:
-  - name: Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution of Authorized
-      Software Programs. - Restart fapolicyd If Permissive Mode or Final Rule is Changed
-    ansible.builtin.service:
-      name: fapolicyd
-      state: restarted
-    when:
-    - '"kernel-core" in ansible_facts.packages'
-    - '"fapolicyd" in ansible_facts.packages'
-    - result_fapolicyd_final_rule is changed or result_fapolicyd_enforced is changed
-    tags:
-    - DISA-STIG-RHEL-09-433016
-    - NIST-800-53-CM-6 b
-    - NIST-800-53-CM-7 (2)
-    - NIST-800-53-CM-7 (5) (b)
-    - fapolicy_default_deny
-    - low_complexity
-    - low_disruption
-    - medium_severity
-    - no_reboot_needed
-    - restrict_strategy
-  rescue:
-  - name: 'StigForge: continue after error in ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy
-      to Allow the Execution of Authorized Software Programs. - Restart fapolicyd If Permissive Mode or Final Rule is Changed''
-      (OpenSCAP is the score gate)'
-    ansible.builtin.debug:
-      msg: 'StigForge: ''Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy to Allow the Execution
-        of Authorized Software Programs. - Restart fapolicyd If Permissive Mode or Final Rule is Changed'' raised an error
-        (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system
-        state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_fapolicy_default_deny | default(true) | bool)
 - block:
   - name: Configure System to Forward All Mail For The Root Account - Make sure that "/etc/aliases" has a defined value for
       root

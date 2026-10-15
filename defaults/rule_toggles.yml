@@ -183,7 +183,6 @@ cs9stig_ensure_gpgcheck_globally_activated: true
 cs9stig_ensure_gpgcheck_local_packages: true
 cs9stig_ensure_gpgcheck_never_disabled: true
 cs9stig_ensure_redhat_gpgkey_installed: true
-cs9stig_fapolicy_default_deny: true
 cs9stig_file_audit_tools_group_ownership: true
 cs9stig_file_audit_tools_ownership: true
 cs9stig_file_audit_tools_permissions: true
@@ -364,6 +363,7 @@ cs9stig_sshd_set_loglevel_verbose: true
 cs9stig_sshd_x11_use_localhost: true
 cs9stig_sssd_offline_cred_expiration: true
 cs9stig_sudo_remove_no_authenticate: true
+cs9stig_sudo_require_reauthentication: true
 cs9stig_sudoers_validate_passwd: true
 cs9stig_sysctl_fs_protected_hardlinks: true
 cs9stig_sysctl_fs_protected_symlinks: true
