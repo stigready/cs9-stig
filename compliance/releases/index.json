@@ -18,5 +18,10 @@
     "version": "0.3.25",
     "role": "cs9_stig",
     "matrix_status": "green"
+  },
+  {
+    "version": "0.3.26",
+    "role": "cs9_stig",
+    "matrix_status": "green"
   }
 ]
