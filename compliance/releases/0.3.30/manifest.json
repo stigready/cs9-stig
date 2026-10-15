@@ -1,0 +1,11 @@
+{
+  "role": "cs9_stig",
+  "version": "0.3.30",
+  "factory_repo": "stigready/stigforge",
+  "matrix_status": "green",
+  "pipeline_run_id": "38812161310",
+  "factory_commit": "47b95c40714610d3bc69e8bf49ad66de0eb18245",
+  "content_digest": "acf3a640e01385a36e6a12420bfcb9872d156b7f1ab61b2e43d46973d889ce55",
+  "container_verify": "removed-0017",
+  "compliance_evidence": "Not produced here. Container verify was removed by decision 0017 because a container cannot evaluate most STIG rules; compliance evidence for this role comes from the AMI build that consumes it in stigready/stigready."
+}
