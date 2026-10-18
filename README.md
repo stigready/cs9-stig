@@ -2,7 +2,7 @@
 
 **Ansible hardening role** for **CentOS Stream 9** (DISA STIG). Suitable for playbooks, Packer/Ansible provisioners, and golden-image pipelines. Search keywords: `ansible`, `ansible-role`, `centos`, `centos-stream`, `compliance`, `cs9`, `devsecops`, `disa`, `disa-stig`, `hardening`, `infrastructure`, `openscap`, `rhel`, `security`.
 
-StigForge-exported Ansible role **`cs9_stig`** · release **`0.3.38`**.
+StigForge-exported Ansible role **`cs9_stig`** · release **`0.3.39`**.
 Matrix cell status: **`green`**.
 
 ## Install (Ansible Galaxy)
@@ -13,7 +13,7 @@ lives under `compliance/` and is not loaded when the role runs.
 From **Ansible Galaxy** (after import; namespace `stigready`):
 
 ```bash
-ansible-galaxy role install stigready.cs9_stig,0.3.38
+ansible-galaxy role install stigready.cs9_stig,0.3.39
 ```
 
 From **GitHub** (public):
@@ -23,7 +23,7 @@ From **GitHub** (public):
 roles:
   - src: https://github.com/stigready/cs9-stig
     scm: git
-    version: v0.3.38   # or an immutable commit SHA
+    version: v0.3.39   # or an immutable commit SHA
     name: cs9_stig
 ```
 
@@ -39,7 +39,7 @@ Evidence was produced by **docker verify + OpenSCAP** on the factory CI run cite
 | Profile | Score | Floor | Gate | Ansible | Evidence tested (UTC) |
 |---|---:|---:|---|---|---|
 
-Full artifacts per profile: `compliance/releases/0.3.38/<profile>/` (`score.json`, `results.xml`, `arf.xml`, `evidence.json`, `evidence-report.html`, `poam.md`).
+Full artifacts per profile: `compliance/releases/0.3.39/<profile>/` (`score.json`, `results.xml`, `arf.xml`, `evidence.json`, `evidence-report.html`, `poam.md`).
 
 ## Reports & review
 
@@ -52,7 +52,7 @@ Full artifacts per profile: `compliance/releases/0.3.38/<profile>/` (`score.json
 Re-run OpenSCAP in Docker and compare to this release's evidence:
 
 ```bash
-make prove RELEASE=0.3.38
+make prove RELEASE=0.3.39
 ```
 
 Or score your own `results.xml`: see **[compliance/README.md](compliance/README.md)**.
@@ -64,7 +64,7 @@ Or score your own `results.xml`: see **[compliance/README.md](compliance/README.
 
 ## Factory
 
-- Monorepo: [stigready/stigforge](https://github.com/stigready/stigforge) @ `a6d438f70c9b2c3784cf5ba0b6b8b277420c2082`
-- CI run: https://github.com/stigready/stigforge/actions/runs/39110328513
+- Monorepo: [stigready/stigforge](https://github.com/stigready/stigforge) @ `1252d9950351844d2026a96735d145fcae7ee1ad`
+- CI run: https://github.com/stigready/stigforge/actions/runs/39113112323
 - Catalog: [https://stigready.com/#stigforge](https://stigready.com/#stigforge)
 
