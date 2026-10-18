@@ -2,6 +2,19 @@
 
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.38] - 2026-10-18
+
+### Changed
+- StigForge export refresh for `cs9_stig` at `0.3.38`.
+
+### Verified (OpenSCAP)
+
+
+### Provenance
+
+- Factory pipeline: https://github.com/stigready/stigforge/actions/runs/39110328513
+- Factory commit: `a6d438f70c9b2c3784cf5ba0b6b8b277420c2082`
+
 ## [0.3.37] - 2026-10-18
 
 ### Changed
