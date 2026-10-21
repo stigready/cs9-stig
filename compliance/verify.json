@@ -1,15 +1,15 @@
 {
   "role_name": "cs9_stig",
-  "release": "0.3.46",
+  "release": "0.3.47",
   "min_score": 90.0,
   "family": "rhel",
   "docker_image_tag": "stigready-prove-cs9_stig",
-  "factory_commit": "495048ce8cefef4a6672d1d40ce103f97954fa84",
+  "factory_commit": "d6a710db55ff9317d77d7d2060ffc1d0b078ca90",
   "profiles": {
     "stig": {
       "xccdf_profile_id": "xccdf_org.ssgproject.content_profile_stig",
       "ssg_datastream": "ssg-cs9-ds.xml",
-      "evidence_dir": "compliance/releases/0.3.46/stig"
+      "evidence_dir": "compliance/releases/0.3.47/stig"
     }
   },
   "exempt_rules_file": "compliance/exempt-rules.txt"
