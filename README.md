@@ -2,19 +2,13 @@
 
 **Ansible hardening role** for **CentOS Stream 9** (DISA STIG). Suitable for playbooks, Packer/Ansible provisioners, and golden-image pipelines. Search keywords: `ansible`, `ansible-role`, `centos`, `centos-stream`, `compliance`, `cs9`, `devsecops`, `disa`, `disa-stig`, `hardening`, `infrastructure`, `openscap`, `rhel`, `security`.
 
-StigForge-exported Ansible role **`cs9_stig`** · release **`0.3.48`**.
+StigForge-exported Ansible role **`cs9_stig`** · release **`0.3.49`**.
 Matrix cell status: **`green`**.
 
-## Install (Ansible Galaxy)
+## Install
 
 This repository root **is** the Ansible role (Galaxy-style layout). OpenSCAP evidence
 lives under `compliance/` and is not loaded when the role runs.
-
-From **Ansible Galaxy** (after import; namespace `stigready`):
-
-```bash
-ansible-galaxy role install stigready.cs9_stig,0.3.48
-```
 
 From **GitHub** (public):
 
@@ -23,7 +17,7 @@ From **GitHub** (public):
 roles:
   - src: https://github.com/stigready/cs9-stig
     scm: git
-    version: v0.3.48   # or an immutable commit SHA
+    version: v0.3.49   # or an immutable commit SHA
     name: cs9_stig
 ```
 
@@ -34,12 +28,9 @@ ansible-playbook -i inventory site.yml   # role: cs9_stig
 
 ## Verification status (this release)
 
-Scores are OpenSCAP results for this role, recorded by the factory pipeline run cited below.
-
-| Profile | Score | Floor | Gate | Ansible | Evidence tested (UTC) |
-|---|---:|---:|---|---|---|
-
-Full artifacts per profile: `compliance/releases/0.3.48/<profile>/` (`score.json`, `results.xml`, `arf.xml`, `evidence.json`, `evidence-report.html`, `poam.md`).
+This release carries no per-role OpenSCAP score. A container cannot evaluate most STIG rules, so the
+role is scored where it runs: the StigReady AMI build scores each image against the unmodified SSG
+profile. `compliance/releases/0.3.49/manifest.json` records this.
 
 ## Reports & review
 
@@ -51,7 +42,7 @@ Full artifacts per profile: `compliance/releases/0.3.48/<profile>/` (`score.json
 Re-run OpenSCAP in Docker and compare to this release's evidence:
 
 ```bash
-make prove RELEASE=0.3.48
+make prove RELEASE=0.3.49
 ```
 
 Or score your own `results.xml`: see **[compliance/README.md](compliance/README.md)**.
