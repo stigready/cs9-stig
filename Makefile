@@ -1,14 +1,8 @@
-# Customer role repo — OpenSCAP prove + score check
-.PHONY: prove score-results help
+.PHONY: score-results help
 
 help:
 	@echo "Targets:"
-	@echo "  make prove RELEASE=<ver>     Docker reprove (apply role + OpenSCAP + compare to evidence)"
-	@echo "  make score-results RESULTS=<path> PROFILE=<prof>   Score a results.xml using factory rules"
-
-prove:
-	@test -n "$(RELEASE)" || (echo "RELEASE= required (folder under compliance/releases/)" && exit 1)
-	@./scripts/prove.sh
+	@echo "  make score-results RESULTS=<path> PROFILE=<prof>   Score a results.xml with this role's exception list"
 
 score-results:
 	@test -n "$(RESULTS)" || (echo "RESULTS= path to OpenSCAP results.xml required" && exit 1)

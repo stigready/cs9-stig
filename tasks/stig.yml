@@ -204,6 +204,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure crypto-policies is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_crypto_policies_installed | default(true) |
+    bool)
 - name: 'StigForge: refresh package facts after ''Ensure crypto-policies is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -293,6 +295,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure gnutls-utils is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_gnutls_utils_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure gnutls-utils is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -320,6 +323,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure nss-tools is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_nss_tools_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure nss-tools is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -347,6 +351,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure rng-tools is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_rng_tools_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure rng-tools is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -503,6 +508,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure rsyslog-gnutls is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_rsyslog_gnutls_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure rsyslog-gnutls is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -633,6 +639,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure policycoreutils-python-utils is installed'' raised an error (module or templating) and was
         skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_policycoreutils_python_utils_installed | default(true)
+    | bool)
 - name: 'StigForge: refresh package facts after ''Ensure policycoreutils-python-utils is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -777,6 +785,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure s-nail is installed'' raised an error (module or templating) and was skipped; continuing so
         later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_s_nail_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure s-nail is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -828,6 +837,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Uninstall nfs-utils Package: Ensure nfs-utils is removed'' raised an error (module or templating)
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_nfs_utils_removed | default(true) | bool)
 - block:
   - name: Ensure chrony is installed
     ansible.builtin.package:
@@ -884,6 +894,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Uninstall telnet-server Package: Ensure telnet-server is removed'' raised an error (module or templating)
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_telnet_server_removed | default(true) | bool)
 - block:
   - name: 'Uninstall tftp-server Package: Ensure tftp-server is removed'
     ansible.builtin.package:
@@ -908,6 +919,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Uninstall tftp-server Package: Ensure tftp-server is removed'' raised an error (module or templating)
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_tftp_server_removed | default(true) | bool)
 - block:
   - name: Ensure openssh-clients is installed
     ansible.builtin.package:
@@ -927,6 +939,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure openssh-clients is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_openssh_clients_installed | default(true) |
+    bool)
 - name: 'StigForge: refresh package facts after ''Ensure openssh-clients is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -955,6 +969,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure openssh-server is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_openssh_server_installed | default(true) | bool)
 - name: 'StigForge: refresh package facts after ''Ensure openssh-server is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -1053,6 +1068,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Ensure audispd-plugins is installed'' raised an error (module or templating) and was skipped; continuing
         so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_package_audispd_plugins_installed | default(true) |
+    bool)
 - name: 'StigForge: refresh package facts after ''Ensure audispd-plugins is installed'' installed a package'
   ansible.builtin.package_facts:
     manager: auto
@@ -1146,7 +1163,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Disable debug-shell SystemD Service - Disable service debug-shell'' raised an error (module or templating)
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_special_service_block | default(true) | bool)
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_service_debug_shell_disabled | default(true) | bool)
 - block:
   - name: Enable rsyslog Service - Enable service rsyslog
     block:
@@ -1204,7 +1221,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Enable systemd-journald Service - Enable service systemd-journald'' raised an error (module or templating)
         and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_special_service_block | default(true) | bool)
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_service_systemd_journald_enabled | default(true) | bool)
 - block:
   - name: Disable the Automounter - Disable service autofs
     block:
@@ -1401,7 +1418,7 @@
     ansible.builtin.debug:
       msg: 'StigForge: ''Enable the OpenSSH Service - Enable service sshd'' raised an error (module or templating) and was
         skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
-  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_special_service_block | default(true) | bool)
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_service_sshd_enabled | default(true) | bool)
 - block:
   - name: Enable the USBGuard Service - Enable service usbguard
     block:
@@ -11061,6 +11078,37 @@
         OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_accounts_password_pam_difok | default(true) | bool)
 - block:
+  - name: Ensure PAM Enforces Password Requirements - Enforce for root User
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      create: true
+      regexp: ^\s*enforce_for_root\s*$
+      line: enforce_for_root
+      state: present
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"libpwquality" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-611060
+    - NIST-800-53-CM-6(a)
+    - NIST-800-53-IA-5(1)(a)
+    - NIST-800-53-IA-5(4)
+    - NIST-800-53-IA-5(c)
+    - accounts_password_pam_enforce_root
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - restrict_strategy
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure PAM Enforces Password Requirements - Enforce for root User'' (OpenSCAP
+      is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure PAM Enforces Password Requirements - Enforce for root User'' raised an error (module or templating)
+        and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_accounts_password_pam_enforce_root | default(true) |
+    bool)
+- block:
   - name: Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters - Find pwquality.conf.d files
     ansible.builtin.find:
       paths: /etc/security/pwquality.conf.d/
@@ -16825,6 +16873,181 @@
   when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_encrypt_offload_actionsendstreamdrivermode |
     default(true) | bool)
 - block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Set facts'
+    ansible.builtin.set_fact:
+      conf_files:
+      - /etc/rsyslog.conf
+      remote_methods:
+      - selector: auth.*
+        regexp: ^[^#]*auth\.\*.*$
+        location: /var/log/secure
+      - selector: authpriv.*
+        regexp: ^[^#]*authpriv\.\*.*$
+        location: /var/log/secure
+      - selector: daemon.*
+        regexp: ^[^#]*daemon\.\*.*$
+        location: /var/log/messages
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Set facts'' (OpenSCAP
+      is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Set facts'' raised an error (module or templating)
+        and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Ensure rsyslog.conf exists'
+    ansible.builtin.file:
+      path: '{{ conf_files.0 }}'
+      state: touch
+      access_time: preserve
+      modification_time: preserve
+      mode: 420
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Ensure rsyslog.conf
+      exists'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Ensure rsyslog.conf exists'' raised an error
+        (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system
+        state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Gather conf.d files'
+    ansible.builtin.find:
+      patterns:
+      - '*.conf'
+      paths:
+      - /etc/rsyslog.d
+    register: rsyslogd
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Gather conf.d files''
+      (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Gather conf.d files'' raised an error (module
+        or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state
+        independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Set conf file(s)'
+    ansible.builtin.set_fact:
+      conf_files: '{{ conf_files + [item.path] }}'
+    loop: '{{ rsyslogd.files }}'
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    - rsyslogd.matched > 0
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Set conf file(s)''
+      (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Set conf file(s)'' raised an error (module
+        or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state
+        independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Check for existing values'
+    ansible.builtin.lineinfile:
+      path: '{{ item.1 }}'
+      regexp: '{{ item.0.regexp }}'
+      state: absent
+    check_mode: true
+    changed_when: false
+    register: remote_method_values
+    loop: '{{ remote_methods|product(conf_files)|list }}'
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Check for existing
+      values'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Check for existing values'' raised an error
+        (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system
+        state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
+  - name: 'Ensure remote access methods are monitored in Rsyslog: Configure'
+    ansible.builtin.lineinfile:
+      path: /etc/rsyslog.conf
+      line: '{{ item.item.0.selector }} {{ item.item.0.location }}'
+      insertafter: ^.*\/var\/log\/secure.*$
+      create: true
+      mode: 420
+    loop: '{{ remote_method_values.results }}'
+    when:
+    - '"kernel-core" in ansible_facts.packages'
+    - '"rsyslog" in ansible_facts.packages'
+    - item.found == 0
+    tags:
+    - DISA-STIG-RHEL-09-652030
+    - NIST-800-53-AC-17(1)
+    - configure_strategy
+    - low_complexity
+    - medium_disruption
+    - medium_severity
+    - no_reboot_needed
+    - rsyslog_remote_access_monitoring
+  rescue:
+  - name: 'StigForge: continue after error in ''Ensure remote access methods are monitored in Rsyslog: Configure'' (OpenSCAP
+      is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Ensure remote access methods are monitored in Rsyslog: Configure'' raised an error (module or templating)
+        and was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_rsyslog_remote_access_monitoring | default(true) | bool)
+- block:
   - name: Ensure rsyslog Does Not Accept Remote Messages Unless Acting As Log Server - Define Rsyslog Config Lines Regex in
       Legacy Syntax
     ansible.builtin.set_fact:
@@ -17175,6 +17398,7 @@
       msg: 'StigForge: "Setting unquoted shell-style assignment of ''FirewallBackend'' to ''nftables'' in ''/etc/firewalld/firewalld.conf''"
         raised an error (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the
         resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_firewalld_backend | default(true) | bool)
 - block:
   - name: Configure Accepting Router Advertisements on All IPv6 Interfaces - Set fact for sysctl paths
     ansible.builtin.set_fact:
@@ -21487,6 +21711,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: "Ensure kernel module ''firewire-core'' is disabled" raised an error (module or templating) and was
         skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_kernel_module_firewire_core_disabled | default(true)
+    | bool)
 - block:
   - name: Ensure kernel module 'firewire-core' is blacklisted
     ansible.builtin.lineinfile:
@@ -21511,6 +21737,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: "Ensure kernel module ''firewire-core'' is blacklisted" raised an error (module or templating) and
         was skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_kernel_module_firewire_core_disabled | default(true)
+    | bool)
 - block:
   - name: Ensure kernel module 'sctp' is disabled
     ansible.builtin.lineinfile:
@@ -26015,6 +26243,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: "Ensure kernel module ''usb-storage'' is disabled" raised an error (module or templating) and was skipped;
         continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_kernel_module_usb_storage_disabled | default(true) |
+    bool)
 - block:
   - name: Ensure kernel module 'usb-storage' is blacklisted
     ansible.builtin.lineinfile:
@@ -26045,6 +26275,8 @@
     ansible.builtin.debug:
       msg: 'StigForge: "Ensure kernel module ''usb-storage'' is blacklisted" raised an error (module or templating) and was
         skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_kernel_module_usb_storage_disabled | default(true) |
+    bool)
 - block:
   - name: 'Add nosuid Option to /boot/efi: Check information associated to mountpoint'
     ansible.builtin.command: findmnt --fstab '/boot/efi'
@@ -31401,6 +31633,8 @@
       msg: 'StigForge: ''Disable acquiring, saving, and processing core dumps - Collect systemd Socket Units Present in the
         System'' raised an error (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates
         the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_service_systemd_coredump_disabled | default(true) |
+    bool)
 - block:
   - name: Disable acquiring, saving, and processing core dumps - Ensure systemd-coredump.socket is Masked
     ansible.builtin.systemd:
@@ -31427,6 +31661,8 @@
       msg: 'StigForge: ''Disable acquiring, saving, and processing core dumps - Ensure systemd-coredump.socket is Masked''
         raised an error (module or templating) and was skipped; continuing so later rules still run. OpenSCAP evaluates the
         resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_service_systemd_coredump_disabled | default(true) |
+    bool)
 - block:
   - name: Disable core dump backtraces - Search for a section in files
     ansible.builtin.find:
@@ -36041,6 +36277,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36142,6 +36379,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+{{ var_sshd_set_keepalive }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36217,6 +36455,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "ClientAliveCountMax"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36317,6 +36556,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36424,6 +36664,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+{{ sshd_idle_timeout_value }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36503,6 +36744,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "ClientAliveInterval"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -36607,6 +36849,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -36706,6 +36949,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -36779,6 +37023,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "HostbasedAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -37001,6 +37246,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -37104,6 +37350,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -37180,6 +37427,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitEmptyPasswords"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -37280,6 +37528,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -37366,6 +37615,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -37431,6 +37681,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "GSSAPIAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -37521,6 +37772,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "KerberosAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -37608,6 +37860,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "KerberosAuthentication"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -37673,6 +37926,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "KerberosAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -37763,6 +38017,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -37859,6 +38114,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -37930,6 +38186,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "IgnoreRhosts"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -38026,6 +38283,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -38136,6 +38394,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -38217,6 +38476,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitRootLogin"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -38323,6 +38583,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreUserKnownHosts"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -38411,6 +38672,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "IgnoreUserKnownHosts"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -38477,6 +38739,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "IgnoreUserKnownHosts"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -38567,6 +38830,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "X11Forwarding"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -38647,6 +38911,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "X11Forwarding"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -38708,6 +38973,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "X11Forwarding"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -38794,6 +39060,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -38893,6 +39160,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+no$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -38966,6 +39234,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PermitUserEnvironment"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -39064,6 +39333,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "UsePAM"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -39141,6 +39411,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "UsePAM"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -39200,6 +39471,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "UsePAM"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -39284,6 +39556,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PubkeyAuthentication"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -39356,6 +39629,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PubkeyAuthentication"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -39411,6 +39685,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PubkeyAuthentication"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -39491,6 +39766,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "StrictModes"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -39575,6 +39851,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "StrictModes"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -39638,6 +39915,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "StrictModes"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -39726,6 +40004,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "Banner"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -39818,6 +40097,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "Banner"| regex_escape }}\s+/etc/issue$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -39887,6 +40167,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "Banner"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -39981,6 +40262,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PrintLastLog"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -40058,6 +40340,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "PrintLastLog"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -40117,6 +40400,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "PrintLastLog"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -40201,6 +40485,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "RekeyLimit"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -40273,6 +40558,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "RekeyLimit"| regex_escape }}\s+{{ var_rekey_limit_size }} {{ var_rekey_limit_time }}$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -40328,6 +40614,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "RekeyLimit"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -40408,6 +40695,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LogLevel"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -40498,6 +40786,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "LogLevel"| regex_escape }}\s+VERBOSE$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -40565,6 +40854,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "LogLevel"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -40658,6 +40948,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "X11UseLocalhost"| regex_escape }}\s+
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_has_parameter
@@ -40735,6 +41026,7 @@
       path: /etc/ssh/sshd_config
       regexp: (?i)^\s*{{ "X11UseLocalhost"| regex_escape }}\s+yes$
       state: absent
+      validate: /usr/sbin/sshd -t -f %s
     check_mode: true
     changed_when: false
     register: _config_file_correctly
@@ -40793,6 +41085,7 @@
         create: false
         regexp: (?i)(?i)^\s*{{ "X11UseLocalhost"| regex_escape }}\s+
         state: absent
+        validate: /usr/sbin/sshd -t -f %s
     - name: Check if /etc/ssh/sshd_config.d exists
       ansible.builtin.stat:
         path: /etc/ssh/sshd_config.d
@@ -41108,6 +41401,57 @@
       msg: 'StigForge: ''Log USBGuard daemon audit events using Linux Audit'' raised an error (module or templating) and was
         skipped; continuing so later rules still run. OpenSCAP evaluates the resulting system state independently.'
   when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_configure_usbguard_auditbackend | default(true) | bool)
+- block:
+  - name: Generate USBGuard Policy
+    block:
+    - name: Check that the /etc/usbguard/rules.conf exists
+      ansible.builtin.stat:
+        path: /etc/usbguard/rules.conf
+      register: policy_file
+    - name: Create USBGuard Policy configuration
+      ansible.builtin.command: usbguard generate-policy
+      register: policy
+      when: not (policy_file is not skipped and policy_file.stat.exists) or (policy_file is not skipped and policy_file.stat.size)
+        == 0
+    - name: Copy the Generated Policy configuration to a persistent file
+      ansible.builtin.copy:
+        content: '{{ policy.stdout }}'
+        dest: /etc/usbguard/rules.conf
+        mode: 384
+      when: not (policy_file is not skipped and policy_file.stat.exists) or (policy_file is not skipped and policy_file.stat.size)
+        == 0
+    - name: Add comment into /etc/usbguard/rules.conf when system has no USB devices
+      ansible.builtin.lineinfile:
+        path: /etc/usbguard/rules.conf
+        line: '# No USB devices found'
+        state: present
+      when: not (policy_file is not skipped and policy_file.stat.exists) or (policy_file is not skipped and policy_file.stat.size)
+        == 0
+    - name: Enable service usbguard
+      ansible.builtin.systemd:
+        name: usbguard
+        enabled: 'yes'
+        state: started
+        masked: 'no'
+    when:
+    - ( ansible_architecture != "s390x" and "kernel-core" in ansible_facts.packages )
+    - '"usbguard" in ansible_facts.packages'
+    tags:
+    - DISA-STIG-RHEL-09-291030
+    - NIST-800-53-CM-8(3)(a)
+    - NIST-800-53-IA-3
+    - configure_strategy
+    - low_complexity
+    - low_disruption
+    - medium_severity
+    - no_reboot_needed
+    - usbguard_generate_policy
+  rescue:
+  - name: 'StigForge: continue after error in ''Generate USBGuard Policy'' (OpenSCAP is the score gate)'
+    ansible.builtin.debug:
+      msg: 'StigForge: ''Generate USBGuard Policy'' raised an error (module or templating) and was skipped; continuing so
+        later rules still run. OpenSCAP evaluates the resulting system state independently.'
+  when: (stigforge_rules_enabled | default(true) | bool) and (cs9stig_usbguard_generate_policy | default(true) | bool)
 - block:
   - name: Switch to multi-user runlevel
     ansible.builtin.file:

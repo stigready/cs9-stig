@@ -2,13 +2,20 @@
 
 Format based on [Keep a Changelog](https://keepachangelog.com/).
 
+## [0.3.51] - 2026-10-27
+
+### Changed
+- StigForge export refresh for `cs9_stig` at `0.3.51`.
+
+
+### Provenance
+
+- Factory commit: `8e25cfbe2f728d01f4a83e9ecd222c5f20fae225`
+
 ## [0.3.49] - 2026-10-23
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.49`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -19,9 +26,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.48`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `055cf3a4a0bb0069f7b8dfc298fc7075514fb561`
@@ -30,9 +34,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.47`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -43,9 +44,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.46`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `495048ce8cefef4a6672d1d40ce103f97954fa84`
@@ -54,9 +52,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.45`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -67,9 +62,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.44`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `689bf2483d4e4545d3bed37e9023c3dab5dd07c7`
@@ -78,9 +70,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.43`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -91,9 +80,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.42`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `e07f386623f1f6fbecefcc1435539bc9a175cfdd`
@@ -102,9 +88,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.41`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -115,9 +98,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.40`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `51eeb182c2a9b3c82478ee54ac1b1a650eeaff2b`
@@ -126,9 +106,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.39`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -139,9 +116,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.38`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `a6d438f70c9b2c3784cf5ba0b6b8b277420c2082`
@@ -150,9 +124,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.37`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -163,9 +134,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.36`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `a637196557195597f0b99a57d52d69a08d3c87ac`
@@ -174,9 +142,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.35`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -187,9 +152,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.34`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `88dbd81aaf2662b5edfe8276442bcac76d03cc18`
@@ -198,9 +160,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.33`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -211,9 +170,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.32`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `7fec8dbf560df92bdd14766ed2e23cf1a033cbb7`
@@ -222,9 +178,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.31`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -235,9 +188,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.30`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `47b95c40714610d3bc69e8bf49ad66de0eb18245`
@@ -246,9 +196,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.29`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -259,9 +206,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.28`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `37ff3df3b4d8bcbce22867546d2f94eb80775bd2`
@@ -270,9 +214,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.27`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -283,9 +224,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.26`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `93f9af1e6dd1bba6aa73aec1f8658c10904f961a`
@@ -294,9 +232,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.25`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -307,9 +242,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.24`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `9c54ebbf544404253107593983b9f92ef00b448e`
@@ -318,9 +250,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.22`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -331,9 +260,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.21`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `ee8e0ab796583fc3ac0805135db5addce78c534e`
@@ -342,9 +268,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.20`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -355,9 +278,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.19`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `131aa0c69f6288b05ca93ac905632f09d98f2a2e`
@@ -366,9 +286,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.18`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -379,9 +296,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.17`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `d32c173ff5542f28fab4c80fced650599ae23f3e`
@@ -390,9 +304,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.16`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -403,9 +314,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.15`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `827d01573e162bbf9a498c3007cd4ba08c849d6d`
@@ -414,9 +322,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.14`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -427,9 +332,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.13`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `b61d04a67489d7e305ed8a0b0b183128ee041e3e`
@@ -438,9 +340,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.12`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -451,9 +350,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.11`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `134611244795e36326aa98d3539f14d86547acbb`
@@ -462,9 +358,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.10`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -475,9 +368,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.9`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `7ffc7420f5d1b44cfad0f733a926ec1a6bfc7ee8`
@@ -486,9 +376,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.8`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -499,9 +386,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.7`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `c2e22025f5e6a2a6a6568426bc2f8d7e028c2e08`
@@ -510,9 +394,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.6`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -523,9 +404,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.5`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `336dce42410a74ebf84c3ffdfeeaa46ec14a7108`
@@ -534,9 +412,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.4`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -547,9 +422,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.3`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `01b17bb3b1afea0172a458e4b6939a28a8d5948d`
@@ -558,9 +430,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.2`.
-
-### Verified (OpenSCAP)
-
 
 ### Provenance
 
@@ -571,9 +440,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.1`.
 
-### Verified (OpenSCAP)
-
-
 ### Provenance
 
 - Factory commit: `9a161e04bbdab156d492c2cb0f6afb2ab43beb30`
@@ -583,11 +449,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 ### Changed
 - StigForge export refresh for `cs9_stig` at `0.3.0`.
 
-### Verified (OpenSCAP)
-
-- **`stig`** — score **94.2%** (floor 90.0%) · gate **PASS** · evidence `20260912T130305Z`
-  - Remaining counted failures: `configure_crypto_policy, file_permissions_ungroupowned, network_configure_name_resolution, use_pam_wheel_for_su`
-
 ### Provenance
 
 - Factory commit: `562a1f7c1a8e19235ee26e972174d1be6c88998c`
@@ -596,12 +457,6 @@ Format based on [Keep a Changelog](https://keepachangelog.com/).
 
 ### Added
 - Initial StigForge export of matrix role `cs9_stig`.
-- OpenSCAP verify evidence bundles per profile under `compliance/releases/`.
-
-### Verified (OpenSCAP)
-
-- **`stig`** — score **97.14%** (floor 90.0%) · gate **PASS** · evidence `20260731T090012Z`
-  - Remaining counted failures: `file_permissions_ungroupowned, network_configure_name_resolution`
 
 ### Provenance
 

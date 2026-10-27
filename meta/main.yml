@@ -1,9 +1,9 @@
 galaxy_info:
   role_name: cs9_stig
   namespace: stigready
-  description: Ansible role for CentOS Stream 9 DISA STIG hardening (stig). ComplianceAsCode/SSG
-    remediation, OpenSCAP-verified in StigForge CI. Install with ansible-galaxy or
-    git.
+  description: Ansible role for CentOS Stream 9, generated from the DISA STIG for
+    Red Hat Enterprise Linux 9 profile in ComplianceAsCode SSG 0.1.82 (RHEL 9 content,
+    applied to CentOS Stream 9).
   license: BSD-3-Clause
   min_ansible_version: '2.16'
   platforms:

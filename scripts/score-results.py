@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Score OpenSCAP results.xml (factory-compatible) and compare to release evidence."""
+# SPDX-FileCopyrightText: 2026 StigReady
+# SPDX-License-Identifier: MIT
+"""Score an OpenSCAP results.xml from your own host with this role's exception list.
+
+The score counts pass and fail rule results, leaving out the rules listed in
+compliance/exempt-rules.txt, and checks it against min_score in compliance/verify.json.
+No OpenSCAP results ship with this repository, so there is no published score to compare to.
+"""
 from __future__ import annotations
 
 import argparse
@@ -77,16 +84,13 @@ def score_results(
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Score OpenSCAP results or compare to release evidence")
-    ap.add_argument("--results", type=Path, help="Path to OpenSCAP results.xml")
+    ap = argparse.ArgumentParser(
+        description="Score an OpenSCAP results.xml from your own host with this role's exception list "
+        "(compliance/exempt-rules.txt) and the min_score in compliance/verify.json."
+    )
+    ap.add_argument("--results", type=Path, required=True, help="Path to the OpenSCAP results.xml from your host")
     ap.add_argument("--verify-json", type=Path, default=Path("compliance/verify.json"))
     ap.add_argument("--profile", required=True)
-    ap.add_argument("--release", help="Release folder name under compliance/releases/")
-    ap.add_argument(
-        "--compare",
-        action="store_true",
-        help="Compare computed score to compliance/releases/RELEASE/PROFILE/score.json",
-    )
     ap.add_argument("--repo-root", type=Path, default=Path("."))
     args = ap.parse_args()
     root = args.repo_root.resolve()
@@ -96,43 +100,13 @@ def main() -> int:
     exempt_file = verify.get("exempt_rules_file", "compliance/exempt-rules.txt")
     exempt = _load_exempt(root / exempt_file)
 
-    results_path = args.results
-    if args.compare:
-        release = args.release or verify.get("release")
-        if not release:
-            print("ERROR: --release or verify.json release required for --compare", file=sys.stderr)
-            return 2
-        results_path = root / "compliance" / "prove-runs" / release / args.profile / "results.xml"
-        expected_path = root / "compliance" / "releases" / release / args.profile / "score.json"
-    else:
-        expected_path = None
-        if not results_path:
-            print("ERROR: --results required unless --compare", file=sys.stderr)
-            return 2
-
-    if not results_path.is_file():
-        print(f"ERROR: results not found: {results_path}", file=sys.stderr)
+    if not args.results.is_file():
+        print(f"ERROR: results not found: {args.results}", file=sys.stderr)
         return 1
 
-    report = score_results(results_path, min_score=min_score, exempt=exempt)
+    report = score_results(args.results, min_score=min_score, exempt=exempt)
     print(json.dumps(report, indent=2))
     print(report["openscap_line"])
-
-    if args.compare and expected_path and expected_path.is_file():
-        expected = json.loads(expected_path.read_text())
-        exp_score = expected.get("score")
-        got = report["score"]
-        print(f"\nExpected (release evidence): {exp_score}% gate_pass={expected.get('gate_pass')}")
-        if exp_score is not None and abs(float(exp_score) - float(got)) > 0.05:
-            print("MISMATCH: score differs from pinned release evidence", file=sys.stderr)
-            return 1
-        if expected.get("gate_pass") and not report["gate_pass"]:
-            print("MISMATCH: release passed gate but reprove did not", file=sys.stderr)
-            return 1
-        print("OK: reprove matches release evidence (within tolerance)")
-    elif args.compare:
-        print(f"NOTE: no expected score at {expected_path}; scored reprove only")
-
     return 0 if report["gate_pass"] else 1
 
 

@@ -1,46 +1,31 @@
-# Verify OpenSCAP scores in this role repo
+# Scoring this role
 
-Each release ships **immutable evidence** under `compliance/releases/<version>/<profile>/`
-(`score.json`, `results.xml`, `arf.xml`, `evidence.json`).
+This repository ships **no OpenSCAP results**. A container cannot evaluate most hardening rules, so the role
+is not scored here. `compliance/releases/<version>/manifest.json` records this for each release.
 
-You can **re-check the score** in two ways:
+## Score a host you hardened
 
-## 1. Full reprove (recommended — matches factory docker verify)
-
-Requires **Docker**. Applies this role in a clean OS image, runs OpenSCAP, and scores with the
-same exempt-rule policy as StigForge (`compliance/exempt-rules.txt`).
+Apply the role to a host, then run OpenSCAP on that host with the SCAP Security Guide (SSG) release named
+in `compliance/verify.json` (`ssg_version`, the release this role was generated from), using the datastream
+and profile named there:
 
 ```bash
-make prove RELEASE=0.2.1-private-review
+sudo oscap xccdf eval --profile <xccdf_profile_id> --results results.xml <ssg-datastream.xml>
+```
+
+Score the results with this role's exception list (`compliance/exempt-rules.txt`):
+
+```bash
+make score-results RESULTS=results.xml PROFILE=stig
 # or
-RELEASE=0.2.1-private-review ./scripts/prove.sh
+python3 scripts/score-results.py --results results.xml --profile stig --verify-json compliance/verify.json
 ```
 
-Outputs go to `compliance/prove-runs/<release>/<profile>/` and are compared to the pinned
-`score.json` for that release.
+`score-results.py` parses the results with `defusedxml` when it is installed (`pip install defusedxml`) and falls
+back to the standard library XML parser otherwise.
 
-## 2. Score your own OpenSCAP results
+## Files
 
-If you already applied the role and ran `oscap xccdf eval` on a host:
-
-```bash
-python3 scripts/score-results.py \
-  --results /path/to/results.xml \
-  --profile stig \
-  --verify-json compliance/verify.json
-```
-
-Compare to the published release:
-
-```bash
-python3 scripts/score-results.py --compare --profile stig --release 0.2.1-private-review
-```
-
-(after a local `make prove`, or point `--results` at your own file without `--compare`)
-
-## Configuration
-
-- `compliance/verify.json` — profiles, XCCDF ids, datastream names, floor score
-- `compliance/docker/Dockerfile` — OS image used for reprove (family-specific at export)
-
-Optional: `pip install defusedxml` on the host for safer XML parsing when scoring outside Docker.
+- `compliance/verify.json`: profiles, XCCDF ids, datastream names, SSG version, floor score
+- `compliance/exempt-rules.txt`: rules excluded from the score, each explained in the README's *Exceptions* table
+- `compliance/releases/<version>/manifest.json`: what each release contains

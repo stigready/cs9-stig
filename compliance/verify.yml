@@ -1,1 +1,3 @@
-# Customer verify uses `make prove` and compliance/verify.json (see compliance/README.md).
+# SPDX-FileCopyrightText: 2026 StigReady
+# SPDX-License-Identifier: MIT
+# Customer scoring uses compliance/verify.json and scripts/score-results.py (see compliance/README.md).

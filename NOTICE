@@ -1,8 +1,56 @@
-StigForge role packaging (Makefile, compliance layout, export metadata): see LICENSE (MIT).
+StigForge Ansible roles
+Copyright (c) 2026 StigReady
 
-Ansible remediation task bodies in `tasks/` are imported from ComplianceAsCode /
-scap-security-guide (BSD-3-Clause). Source attribution is preserved in generated
-task file headers.
+StigReady's role packaging (Makefile, compliance layout, scripts, defaults, metadata, README
+and export tooling) is licensed under the MIT License: see LICENSE.
 
-OpenSCAP evidence under `compliance/` is release metadata only; Ansible does not
-load it as part of this role.
+Third-party content
+-------------------
+
+1. ComplianceAsCode / SCAP Security Guide (SSG), BSD-3-Clause.
+   Task files headed "# Source: ComplianceAsCode/content (scap-security-guide) - BSD-3-Clause"
+   contain remediation imported from https://github.com/ComplianceAsCode/content and remain
+   under its licence, reproduced verbatim at the end of this file.
+
+2. DISA STIG. Rule identifiers and titles in STIG roles come from the Security Technical
+   Implementation Guides published by the US Defense Information Systems Agency (DISA).
+
+3. CIS Benchmarks. CIS roles implement SSG's rendering of the CIS Benchmark; they contain no
+   CIS machine-readable content. CIS(R) and CIS Benchmarks(TM) are trademarks of the Center
+   for Internet Security, Inc.
+
+OpenSCAP evidence under `compliance/` is release metadata only; Ansible does not load it as
+part of this role.
+
+StigForge and StigReady are independent: not affiliated with, endorsed by or certified by
+CIS, DISA, the U.S. Department of Defense, NIST, the ComplianceAsCode project or the OS
+vendor. README.md "Notices" names this role's OS vendor and trademarks. All trademarks are
+the property of their respective owners.
+
+----------------------------------------------------------------------------------------
+ComplianceAsCode/content licence (verbatim)
+SPDX license identifier: BSD-3-Clause
+Copyright (c) 2012-2017, Red Hat, Inc.
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+    * Redistributions of source code must retain the above copyright
+      notice, this list of conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+    * Neither the name of the Red Hat nor the
+      names of its contributors may be used to endorse or promote products
+      derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.

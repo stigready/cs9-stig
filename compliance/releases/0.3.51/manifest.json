@@ -1,0 +1,9 @@
+{
+  "role": "cs9_stig",
+  "version": "0.3.51",
+  "matrix_status": "green",
+  "factory_commit": "8e25cfbe2f728d01f4a83e9ecd222c5f20fae225",
+  "content_digest": "1c1404c2559a42d20a8778bf77e9f3f93762c953aeec0f10161f28dd887edca0",
+  "container_verify": "removed-0017",
+  "compliance_evidence": "Not produced here. Container verify was removed because a container cannot evaluate most hardening rules. No OpenSCAP results ship with this release. A StigReady AMI build that pins this role version scores the image it builds."
+}
